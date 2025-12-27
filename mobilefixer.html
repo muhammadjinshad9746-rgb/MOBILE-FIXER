@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Fixer | Professional Mobile Repair Service</title>
+    <style>
+        /* CSS Design */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; }
+        header { background: #0047AB; color: white; padding: 20px; text-align: center; }
+        .hero { background: #f4f4f4; padding: 60px 20px; text-align: center; }
+        .hero h1 { font-size: 2.5em; color: #0047AB; }
+        .btn-book { background: #FF8C00; color: white; padding: 15px 30px; border: none; font-size: 1.2em; cursor: pointer; border-radius: 5px; text-decoration: none; }
+        .services { display: flex; flex-wrap: wrap; justify-content: center; padding: 40px; }
+        .service-card { border: 1px solid #ddd; margin: 10px; padding: 20px; width: 250px; text-align: center; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); }
+        .service-card h3 { color: #0047AB; }
+        footer { background: #333; color: white; text-align: center; padding: 20px; position: relative; bottom: 0; width: 100%; }
+    </style>
+</head>
+<body> 
+
+<header style="background: #0047AB; color: white; padding: 15px 20px; display: flex; align-items: center; justify-content: center; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    
+    <img src="logo.png" alt="Mobile Fixer Logo" style="height: 70px; width: 70px; border-radius: 50%; border: 2px solid white; background: white;"> 
+
+    <div style="text-align: left;">
+        <h1 style="margin: 0; font-size: 28px; letter-spacing: 1px;">Mobile Fixer</h1>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">Your Phone, Our Responsibility!</p>
+    </div>
+</header>
+
+
+    <section class="hero">
+        <h1>Fastest Mobile Repairing Service</h1>
+        <p>Need a screen replacement or battery fix? We can solve it.</p><br>
+        <a href="https://wa.me/+919074544061" class="btn-book">Book Now</a>
+    </section> 
+
+    <section class="services">
+        <div class="service-card">
+            <h3>📱 Screen Repair</h3>
+            <p>Broken screens replaced with original parts.</p>
+        </div>
+        <div class="service-card">
+            <h3>🔋 Battery Fix</h3>
+            <p>Battery draining fast? Get it replaced instantly.</p>
+        </div>
+        <div class="service-card">
+            <h3>💧 Water Damage</h3>
+            <p>Safe and professional repair for water-damaged phones.</p>
+        </div>
+    </section>
+<div style="background: linear-gradient(135deg, #d42426, #165b33); color: #fff; text-align: center; padding: 20px; font-weight: bold; border-radius: 10px; margin: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border: 2px solid #ffd700;">
+    <span style="font-size: 1.5em;">🎄 Merry Christmas & Happy New Year! 🎆</span><br>
+    <p style="margin: 10px 0; font-size: 1.2em;">
+        Celebrate with our Special Holiday Deal!<br>
+        <span style="color: #ffd700; font-size: 1.4em;">**FLAT 15% OFF**</span> on all mobile repairs!
+    </p>
+    <small>Valid until January 5, 2026</small>
+</div>
+
+
+<section id="booking" style="padding: 50px 20px; background-color: #fff;">
+    <h2 style="text-align: center; color: #0047AB;">Book via WhatsApp</h2>
+    <form id="repairForm" style="max-width: 500px; margin: 0 auto; background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        
+        <label>Name:</label><br>
+        <input type="text" id="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;"> 
+
+        <label>Phone Model:</label><br>
+        <input type="text" id="model" placeholder="Ex: iPhone 14, Redmi Note 10" required style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;"> 
+
+        <label>What is the issue?</label><br>
+        <select id="issue" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;">
+            <option value="Screen Replacement">Screen Replacement</option>
+            <option value="Battery Issue">Battery Replacement</option>
+            <option value="Charging Issue">Charging Issue</option>
+            <option value="Other">Others</option>
+        </select> 
+
+        <button type="button" onclick="sendToWhatsApp()" style="width: 100%; padding: 15px; background-color: #25D366; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; font-weight: bold;">
+            Send to WhatsApp 💬
+        </button>
+    </form>
+</section> 
+
+<footer>
+    <p>&copy; 2025 Mobile Fixer. All Rights Reserved.</p>
+</footer>
+
+<script>
+function sendToWhatsApp() {
+    var phoneNumber = "919074544601"; 
+
+    var name = document.getElementById('name').value;
+    var model = document.getElementById('model').value;
+    var issue = document.getElementById('issue').value; 
+
+    if(name == "" || model == "") {
+        alert("Please fill in all details");
+        return;
+    } 
+
+    var message = "Hello Mobile Fixer,%0a" + 
+                  "A new repair booking has been received:%0a%0a" + 
+                  "*Name:* " + name + "%0a" + 
+                  "*Phone Model:* " + model + "%0a" + 
+                  "*Issue:* " + issue; 
+
+    var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + message;
+    window.open(whatsappURL, '_blank');
+}
+</script> 
+
+</body>
+</html>
